@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		C93109132C8F34D500D58EB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C93108FA2C8F34D300D58EB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C93109012C8F34D300D58EB1;
+			remoteInfo = PhotoEncryptor;
+		};
+		C931091D2C8F34D500D58EB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C93108FA2C8F34D300D58EB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C93109012C8F34D300D58EB1;
+			remoteInfo = PhotoEncryptor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C93109022C8F34D300D58EB1 /* PhotoEncryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEncryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93109122C8F34D500D58EB1 /* PhotoEncryptorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEncryptorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C931091C2C8F34D500D58EB1 /* PhotoEncryptorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEncryptorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C93109042C8F34D300D58EB1 /* PhotoEncryptor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PhotoEncryptor;
+			sourceTree = "<group>";
+		};
+		C93109152C8F34D500D58EB1 /* PhotoEncryptorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PhotoEncryptorTests;
+			sourceTree = "<group>";
+		};
+		C931091F2C8F34D500D58EB1 /* PhotoEncryptorUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PhotoEncryptorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C93108FF2C8F34D300D58EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C931090F2C8F34D500D58EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93109192C8F34D500D58EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C93108F92C8F34D300D58EB1 = {
+			isa = PBXGroup;
+			children = (
+				C93109042C8F34D300D58EB1 /* PhotoEncryptor */,
+				C93109152C8F34D500D58EB1 /* PhotoEncryptorTests */,
+				C931091F2C8F34D500D58EB1 /* PhotoEncryptorUITests */,
+				C93109032C8F34D300D58EB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C93109032C8F34D300D58EB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C93109022C8F34D300D58EB1 /* PhotoEncryptor.app */,
+				C93109122C8F34D500D58EB1 /* PhotoEncryptorTests.xctest */,
+				C931091C2C8F34D500D58EB1 /* PhotoEncryptorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C93109012C8F34D300D58EB1 /* PhotoEncryptor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C93109262C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptor" */;
+			buildPhases = (
+				C93108FE2C8F34D300D58EB1 /* Sources */,
+				C93108FF2C8F34D300D58EB1 /* Frameworks */,
+				C93109002C8F34D300D58EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C93109042C8F34D300D58EB1 /* PhotoEncryptor */,
+			);
+			name = PhotoEncryptor;
+			packageProductDependencies = (
+			);
+			productName = PhotoEncryptor;
+			productReference = C93109022C8F34D300D58EB1 /* PhotoEncryptor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C93109112C8F34D500D58EB1 /* PhotoEncryptorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C93109292C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptorTests" */;
+			buildPhases = (
+				C931090E2C8F34D500D58EB1 /* Sources */,
+				C931090F2C8F34D500D58EB1 /* Frameworks */,
+				C93109102C8F34D500D58EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C93109142C8F34D500D58EB1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C93109152C8F34D500D58EB1 /* PhotoEncryptorTests */,
+			);
+			name = PhotoEncryptorTests;
+			packageProductDependencies = (
+			);
+			productName = PhotoEncryptorTests;
+			productReference = C93109122C8F34D500D58EB1 /* PhotoEncryptorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C931091B2C8F34D500D58EB1 /* PhotoEncryptorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C931092C2C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptorUITests" */;
+			buildPhases = (
+				C93109182C8F34D500D58EB1 /* Sources */,
+				C93109192C8F34D500D58EB1 /* Frameworks */,
+				C931091A2C8F34D500D58EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C931091E2C8F34D500D58EB1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C931091F2C8F34D500D58EB1 /* PhotoEncryptorUITests */,
+			);
+			name = PhotoEncryptorUITests;
+			packageProductDependencies = (
+			);
+			productName = PhotoEncryptorUITests;
+			productReference = C931091C2C8F34D500D58EB1 /* PhotoEncryptorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C93108FA2C8F34D300D58EB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					C93109012C8F34D300D58EB1 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					C93109112C8F34D500D58EB1 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = C93109012C8F34D300D58EB1;
+					};
+					C931091B2C8F34D500D58EB1 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = C93109012C8F34D300D58EB1;
+					};
+				};
+			};
+			buildConfigurationList = C93108FD2C8F34D300D58EB1 /* Build configuration list for PBXProject "PhotoEncryptor" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C93108F92C8F34D300D58EB1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C93109032C8F34D300D58EB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C93109012C8F34D300D58EB1 /* PhotoEncryptor */,
+				C93109112C8F34D500D58EB1 /* PhotoEncryptorTests */,
+				C931091B2C8F34D500D58EB1 /* PhotoEncryptorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C93109002C8F34D300D58EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93109102C8F34D500D58EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C931091A2C8F34D500D58EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C93108FE2C8F34D300D58EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C931090E2C8F34D500D58EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93109182C8F34D500D58EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C93109142C8F34D500D58EB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C93109012C8F34D300D58EB1 /* PhotoEncryptor */;
+			targetProxy = C93109132C8F34D500D58EB1 /* PBXContainerItemProxy */;
+		};
+		C931091E2C8F34D500D58EB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C93109012C8F34D300D58EB1 /* PhotoEncryptor */;
+			targetProxy = C931091D2C8F34D500D58EB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C93109242C8F34D500D58EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C93109252C8F34D500D58EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C93109272C8F34D500D58EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PhotoEncryptor/Preview Content\"";
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C93109282C8F34D500D58EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PhotoEncryptor/Preview Content\"";
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C931092A2C8F34D500D58EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoEncryptor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PhotoEncryptor";
+			};
+			name = Debug;
+		};
+		C931092B2C8F34D500D58EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoEncryptor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PhotoEncryptor";
+			};
+			name = Release;
+		};
+		C931092D2C8F34D500D58EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhotoEncryptor;
+			};
+			name = Debug;
+		};
+		C931092E2C8F34D500D58EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B23L3JWP6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tymofii.PhotoEncryptorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhotoEncryptor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C93108FD2C8F34D300D58EB1 /* Build configuration list for PBXProject "PhotoEncryptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93109242C8F34D500D58EB1 /* Debug */,
+				C93109252C8F34D500D58EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C93109262C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93109272C8F34D500D58EB1 /* Debug */,
+				C93109282C8F34D500D58EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C93109292C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C931092A2C8F34D500D58EB1 /* Debug */,
+				C931092B2C8F34D500D58EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C931092C2C8F34D500D58EB1 /* Build configuration list for PBXNativeTarget "PhotoEncryptorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C931092D2C8F34D500D58EB1 /* Debug */,
+				C931092E2C8F34D500D58EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C93108FA2C8F34D300D58EB1 /* Project object */;
+}
