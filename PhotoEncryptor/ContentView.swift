@@ -5,31 +5,61 @@ struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var encrImage: ImageEncryptor = .init(nil)
     @State private var encodingStatus: EncodingStatus = .notStarted
-    
+
     var body: some View {
-        VStack {
-            displayImage()
-            
-            Button {
-                showingImagePicker = true
-            } label: {
-                buttonContent()
+        NavigationStack {
+            VStack {
+                displayImage()
+
+                Button {
+                    showingImagePicker = true
+                } label: {
+                    buttonContent()
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(.blue)
+                )
+
+                if image != nil {
+                    NavigationLink(
+                        destination: SingleImageView(
+                            encryptorObject: $encrImage)
+                    ) { navigationButton() }
+                    .transition(.move(edge: .top))
+                }
             }
             .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundStyle(.blue)
-            )
-        }
-        .padding()
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(selectedImage: $image)
-        }
-        .onChange(of: image) {
-            processImage()
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(selectedImage: $image)
+            }
+            .onChange(of: image) {
+                processImage()
+            }
         }
     }
-    
+
+    @ViewBuilder
+    private func navigationButton() -> some View {
+        HStack {
+            Text("Check the decrypted image")
+                .foregroundStyle(.white)
+                .bold()
+                .transition(.opacity)
+            Image(systemName: "arrow.right")
+                .bold()
+                .foregroundStyle(.white)
+                .transition(.move(edge: .leading))
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundStyle(.blue)
+        )
+
+    }
+
     @ViewBuilder
     private func displayImage() -> some View {
         if let showImg = image {
@@ -42,7 +72,7 @@ struct ContentView: View {
             Text("No image uploaded")
         }
     }
-    
+
     @ViewBuilder
     private func buttonContent() -> some View {
         HStack {
@@ -50,7 +80,7 @@ struct ContentView: View {
                 .foregroundStyle(.white)
                 .bold()
                 .transition(.opacity)
-            
+
             if encodingStatus == .process {
                 ProgressView()
                     .tint(.white)
@@ -63,7 +93,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private var buttonText: String {
         switch encodingStatus {
         case .notStarted:
@@ -76,7 +106,7 @@ struct ContentView: View {
             return "Error while encoding image"
         }
     }
-    
+
     private var iconForStatus: String {
         switch encodingStatus {
         case .success:
@@ -87,15 +117,14 @@ struct ContentView: View {
             return ""
         }
     }
-    
 
     private func processImage() {
         Task {
             encodingStatus = .process
             encrImage = ImageEncryptor(image)
-            
+
             await Task.yield()
-            
+
             withAnimation {
                 if encrImage.data == nil {
                     encodingStatus = .error
@@ -103,9 +132,9 @@ struct ContentView: View {
                     encodingStatus = .success
                 }
             }
-            
+
             try? await Task.sleep(nanoseconds: 2_000_000_000)
-            
+
             withAnimation {
                 encodingStatus = .notStarted
             }

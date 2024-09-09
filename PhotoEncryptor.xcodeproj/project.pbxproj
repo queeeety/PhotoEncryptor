@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C931094A2C8F3E7500D58EB1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C93109492C8F3E7500D58EB1 /* KeychainAccess */; };
+		C93109502C8FBA1F00D58EB1 /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931094F2C8FBA1F00D58EB1 /* SingleImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		C93109022C8F34D300D58EB1 /* PhotoEncryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEncryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93109122C8F34D500D58EB1 /* PhotoEncryptorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEncryptorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C931091C2C8F34D500D58EB1 /* PhotoEncryptorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEncryptorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C931094F2C8FBA1F00D58EB1 /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +82,7 @@
 		C93108F92C8F34D300D58EB1 = {
 			isa = PBXGroup;
 			children = (
+				C931094F2C8FBA1F00D58EB1 /* SingleImageView.swift */,
 				C93109042C8F34D300D58EB1 /* PhotoEncryptor */,
 				C93109152C8F34D500D58EB1 /* PhotoEncryptorTests */,
 				C931091F2C8F34D500D58EB1 /* PhotoEncryptorUITests */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93109502C8FBA1F00D58EB1 /* SingleImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
