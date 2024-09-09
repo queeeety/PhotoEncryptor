@@ -49,6 +49,7 @@ struct ContentView: View {
             Text(buttonText)
                 .foregroundStyle(.white)
                 .bold()
+                .transition(.opacity)
             
             if encodingStatus == .process {
                 ProgressView()
@@ -58,6 +59,7 @@ struct ContentView: View {
                     .bold()
                     .foregroundStyle(.white)
                     .opacity(iconForStatus.isEmpty ? 0 : 1)
+                    .transition(.move(edge: .leading))
             }
         }
     }
