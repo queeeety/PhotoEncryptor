@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C931094A2C8F3E7500D58EB1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C93109492C8F3E7500D58EB1 /* KeychainAccess */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C93109132C8F34D500D58EB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C931094A2C8F3E7500D58EB1 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = PhotoEncryptor;
 			packageProductDependencies = (
+				C93109492C8F3E7500D58EB1 /* KeychainAccess */,
 			);
 			productName = PhotoEncryptor;
 			productReference = C93109022C8F34D300D58EB1 /* PhotoEncryptor.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = C93108F92C8F34D300D58EB1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C93109482C8F3E7500D58EB1 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C93109032C8F34D300D58EB1 /* Products */;
 			projectDirPath = "";
@@ -558,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C93109482C8F3E7500D58EB1 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C93109492C8F3E7500D58EB1 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C93109482C8F3E7500D58EB1 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C93108FA2C8F34D300D58EB1 /* Project object */;
 }
