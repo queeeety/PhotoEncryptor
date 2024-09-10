@@ -9,13 +9,11 @@ import Foundation
 import SwiftUI
 import CryptoKit
 
-struct ImageEncryptor: Equatable{
-    static func == (lhs: ImageEncryptor, rhs: ImageEncryptor) -> Bool {
-        lhs.data == rhs.data
-    }
+struct ImageEncryptor {
     
-    let keychain: KeyProvider
+    private let keychain: KeyProvider
     let data: Data?
+    
     init(_ image: UIImage?) {
         self.keychain = KeyProvider()
         if let image = image,

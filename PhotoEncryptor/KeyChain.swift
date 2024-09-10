@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Security
 import CryptoKit
 import SwiftUI
 import KeychainAccess
@@ -16,8 +15,8 @@ struct KeyProvider {
     
     private let keychain: KeychainProvider
     
-    init(){
-        self.keychain = KeychainProvider()
+    init(serviceName: String = "com.example.myapp"){
+        self.keychain = KeychainProvider(serviceName: serviceName)
     }
     
     
@@ -38,17 +37,14 @@ struct KeychainProvider{
     
     private let keychain: Keychain
     private let blockName: String
-    init(){
-        self.keychain = Keychain(service: "com.example.myapp")
-        self.blockName = "encryptionKey"
+    init(serviceName: String = "com.example.myapp",
+         blockName: String = "encryptionKey"){
+        self.keychain = Keychain(service: serviceName)
+        self.blockName = blockName
     }
     
     func searchData () -> Data?{
-        if let keyData = try? keychain.getData(blockName) {
-            return keyData
-        } else {
-            return nil
-        }
+        return try? keychain.getData(blockName)
     }
     
     func saveData (_ data: Data) {
