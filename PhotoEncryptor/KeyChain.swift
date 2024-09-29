@@ -14,20 +14,20 @@ import KeychainAccess
 struct KeyProvider {
     
     private let keychain: KeychainProvider
-    
+
     init(serviceName: String = "com.example.myapp"){
         self.keychain = KeychainProvider(serviceName: serviceName)
     }
     
     
-     func getKey() -> SymmetricKey {
-         if let data = keychain.searchData() {
+    func getKey(_ keyName: String) -> SymmetricKey {
+        if let data = keychain.searchData(keyName) {
              return SymmetricKey(data: data)
         } else {
             // Create and save Key
             let key = SymmetricKey(size: .bits256)
             let keyData = key.withUnsafeBytes { Data(Array($0)) }
-            keychain.saveData(keyData)
+            keychain.saveData(keyData, blockName: keyName)
             return key
         }
     }
@@ -36,18 +36,15 @@ struct KeyProvider {
 struct KeychainProvider{
     
     private let keychain: Keychain
-    private let blockName: String
-    init(serviceName: String = "com.example.myapp",
-         blockName: String = "encryptionKey"){
+    init(serviceName: String = "com.example.myapp"){
         self.keychain = Keychain(service: serviceName)
-        self.blockName = blockName
     }
     
-    func searchData () -> Data?{
+    func searchData (_ blockName: String) -> Data?{
         return try? keychain.getData(blockName)
     }
     
-    func saveData (_ data: Data) {
+    func saveData (_ data: Data, blockName: String) {
         try? keychain.set(data, key: blockName)
     }
 }
