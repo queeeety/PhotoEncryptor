@@ -8,26 +8,45 @@
 import SwiftUI
 
 struct SingleImageView: View {
-    @Binding var encryptorObject: ImageEncryptor
+    @Binding var encrData: Data?
     @State private var image: UIImage?
+    @State var status: ProcessStatus = .process
+    let imageEncryptor: ImageEncryptor = .init()
+
     var body: some View {
-        if let image = image {
-            Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
-            
-        } else {
+        switch status {
+        case .success:
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
+        case .process:
             ProgressView()
                 .onAppear{
                     Task{
-                        image = await encryptorObject.imageDecoder()
+                        image = await imageEncryptor.imageDecoder(encrData)
+                        withAnimation{
+                            status = image == nil ? .error : .success
+                        }
                     }
                 }
+        case .error:
+            VStack(spacing: 20){
+                Image(systemName: "xmark")
+                    .scaleEffect(3)
+                    .foregroundStyle(.red)
+                Text("Oops, something went wrong with encoding. Please, try again")
+                    .font(.title)
+            }
+        case .notStarted:
+            EmptyView()
         }
     }
 }
 
 #Preview {
-    SingleImageView(encryptorObject: .constant(ImageEncryptor(nil)))
+    SingleImageView(encrData: .constant(nil))
 }

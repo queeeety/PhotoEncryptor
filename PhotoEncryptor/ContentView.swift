@@ -3,9 +3,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: UIImage?
     @State private var showingImagePicker = false
-    @State private var encrImage: ImageEncryptor = .init(nil)
-    @State private var encodingStatus: EncodingStatus = .notStarted
-
+    @State private var encrImage: Data?
+    @State private var encryptor: ImageEncryptor = .init()
+    @State private var encodingStatus: ProcessStatus = .notStarted
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -25,7 +27,7 @@ struct ContentView: View {
                 if image != nil {
                     NavigationLink(
                         destination: SingleImageView(
-                            encryptorObject: $encrImage)
+                            encrData: $encrImage)
                     ) { navigationButton() }
                     .transition(.move(edge: .top))
                 }
@@ -121,12 +123,12 @@ struct ContentView: View {
     private func processImage() {
         Task {
             encodingStatus = .process
-            encrImage = ImageEncryptor(image)
+            encrImage = encryptor.imageEncoder(image)
 
             await Task.yield()
 
             withAnimation {
-                if encrImage.data == nil {
+                if encrImage == nil {
                     encodingStatus = .error
                 } else {
                     encodingStatus = .success
@@ -142,7 +144,7 @@ struct ContentView: View {
     }
 }
 
-enum EncodingStatus {
+enum ProcessStatus {
     case success
     case process
     case error
