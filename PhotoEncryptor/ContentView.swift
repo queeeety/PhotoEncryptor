@@ -134,9 +134,7 @@ struct ContentView: View {
                     encodingStatus = .success
                 }
             }
-
             try? await Task.sleep(nanoseconds: 2_000_000_000)
-
             withAnimation {
                 encodingStatus = .notStarted
             }
