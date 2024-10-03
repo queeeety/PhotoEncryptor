@@ -1,20 +1,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var image: UIImage?
-    @State private var showingImagePicker = false
-    @State private var encrImage: Data?
-    @State private var encryptor: ImageEncryptor = .init()
-    @State private var encodingStatus: ProcessStatus = .notStarted
-    
+    @ObservedObject var viewModel: ContentViewModel
     
     var body: some View {
         NavigationStack {
             VStack {
                 displayImage()
-
                 Button {
-                    showingImagePicker = true
+                    viewModel.showingImagePicker = true
                 } label: {
                     buttonContent()
                 }
@@ -24,20 +18,17 @@ struct ContentView: View {
                         .foregroundStyle(.blue)
                 )
 
-                if image != nil {
+                if viewModel.image != nil {
                     NavigationLink(
                         destination: SingleImageView(
-                            encrData: $encrImage)
+                            viewModel: SingleImageViewModel(encrData: viewModel.encrImage))
                     ) { navigationButton() }
                     .transition(.move(edge: .top))
                 }
             }
             .padding()
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(selectedImage: $image)
-            }
-            .onChange(of: image) {
-                processImage()
+            .sheet(isPresented: $viewModel.showingImagePicker) {
+                ImagePicker(selectedImage: $viewModel.image)
             }
         }
     }
@@ -64,7 +55,7 @@ struct ContentView: View {
 
     @ViewBuilder
     private func displayImage() -> some View {
-        if let showImg = image {
+        if let showImg = viewModel.image {
             Image(uiImage: showImg)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -78,25 +69,69 @@ struct ContentView: View {
     @ViewBuilder
     private func buttonContent() -> some View {
         HStack {
-            Text(buttonText)
+            Text(viewModel.buttonText)
                 .foregroundStyle(.white)
                 .bold()
                 .transition(.opacity)
-
-            if encodingStatus == .process {
+            
+            if viewModel.encodingStatus == .process {
                 ProgressView()
                     .tint(.white)
             } else {
-                Image(systemName: iconForStatus)
+                Image(systemName: viewModel.iconForStatus)
                     .bold()
                     .foregroundStyle(.white)
-                    .opacity(iconForStatus.isEmpty ? 0 : 1)
+                    .opacity(viewModel.iconForStatus == "empty" ? 0 : 1)
                     .transition(.move(edge: .leading))
             }
         }
     }
 
-    private var buttonText: String {
+
+
+
+}
+
+@MainActor
+class ContentViewModel: ObservableObject {
+    @Published var image: UIImage? {
+        didSet {
+            processImage()
+        }
+    }
+    @Published var showingImagePicker = false
+    @Published var encrImage: Data?
+    @Published var encryptor: ImageEncryptor = .init()
+    @Published var encodingStatus: ProcessStatus = .notStarted
+    
+    func processImage() {
+        Task {
+            encodingStatus = .process
+            encrImage = encryptor.imageEncoder(image)
+
+            await Task.yield()
+
+            DispatchQueue.main.async {
+                withAnimation {
+                    if self.encrImage == nil {
+                        self.encodingStatus = .error
+                    } else {
+                        self.encodingStatus = .success
+                    }
+                }
+            }
+
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
+
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.encodingStatus = .notStarted
+                }
+            }
+        }
+    }
+    
+    var buttonText: String {
         switch encodingStatus {
         case .notStarted:
             return "Upload Image"
@@ -109,37 +144,18 @@ struct ContentView: View {
         }
     }
 
-    private var iconForStatus: String {
+    var iconForStatus: String {
         switch encodingStatus {
         case .success:
             return "checkmark.circle.fill"
         case .error:
             return "xmark.circle.fill"
         default:
-            return ""
+            return "empty"
         }
     }
-
-    private func processImage() {
-        Task {
-            encodingStatus = .process
-            encrImage = encryptor.imageEncoder(image)
-
-            await Task.yield()
-
-            withAnimation {
-                if encrImage == nil {
-                    encodingStatus = .error
-                } else {
-                    encodingStatus = .success
-                }
-            }
-            try? await Task.sleep(nanoseconds: 2_000_000_000)
-            withAnimation {
-                encodingStatus = .notStarted
-            }
-        }
-    }
+    
+    
 }
 
 enum ProcessStatus {
@@ -150,5 +166,5 @@ enum ProcessStatus {
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ContentViewModel())
 }

@@ -8,30 +8,28 @@
 import SwiftUI
 
 struct SingleImageView: View {
-    @Binding var encrData: Data?
-    @State private var image: UIImage?
-    @State var status: ProcessStatus = .process
-    let imageEncryptor: ImageEncryptor = .init()
+    @ObservedObject var viewModel: SingleImageViewModel
     
     var body: some View {
-        switch status {
+        switch viewModel.status {
         case .success:
             PhotoView()
         case .process:
             ProgressView()
                 .onAppear{
-                    imageEncoding()
+                    viewModel.didAppear = true
                 }
         case .error:
             ErrorView()
         case .notStarted:
             EmptyView()
+
         }
     }
     
     @ViewBuilder
     private func PhotoView() -> some View{
-        Image(uiImage: image!)
+        Image(uiImage: viewModel.image!)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding()
@@ -48,25 +46,44 @@ struct SingleImageView: View {
                 .font(.title)
         }
     }
+}
+
+
+class SingleImageViewModel: ObservableObject{
+    @Published var encrData: Data?
+    @Published var image: UIImage?
+    @Published var status: ProcessStatus = .process
+    @Published var didAppear: Bool = false {
+        didSet {
+            if didAppear && image == nil{
+                viewDidAppear()
+            }
+        }
+    }
+    let imageEncryptor: ImageEncryptor = .init()
     
-    private func imageEncoding() {
+    init(encrData: Data?){
+        self.encrData = encrData
+    }
+    
+    func viewDidAppear(){
+        status = .process
         Task{
             let decrImage = await imageEncryptor.imageDecoder(encrData)
+            await Task.yield()
             if decrImage != nil {
-                withAnimation{
-                    status = .success
-                    image = decrImage!
-                }
+                self.image = decrImage!
+                self.status = .success
             }
             else {
-                withAnimation{
-                    status = .error
-                }
+                self.status = .error
             }
         }
     }
 }
+    
+
 
 #Preview {
-    SingleImageView(encrData: .constant(nil))
+    SingleImageView(viewModel: SingleImageViewModel(encrData: nil))
 }
