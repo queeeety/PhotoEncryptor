@@ -65,7 +65,7 @@ class SingleImageViewModel: ObservableObject{
     init(encrData: Data?){
         self.encrData = encrData
     }
-    
+
     func viewDidAppear(){
         status = .process
         Task{
