@@ -45,7 +45,7 @@ This approach ensures the application remains flexible and testable while mainta
    The main view where users can select photos for encryption or decryption. This simple and intuitive UI focuses on user experience.
    
    <img alt="Main Interface Screenshot" height="426" src="ReadmePics/scMain.png" width="196,5"/>
-   <img alt="Main Inerface with Previous picture" height="426" src="ReadmePics/scMain.png" width="196,5"/>
+   <img alt="Main Inerface with Previous picture" height="426" src="ReadmePics/scMainWithPicture.png" width="196,5"/>
 
 ### 2. Encryption Status
    A visual representation of the encryption process and status.
