@@ -1,5 +1,5 @@
 
-# PhotoEncry ptor
+# PhotoEncryptor
 
 ## Overview
 
